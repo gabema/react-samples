@@ -55,22 +55,22 @@ const WebNotif = () => (
   />
 );
 
-const App = () => (
+const App = ({baseURL}) => (
   <Router>
     <div>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/topics">Topics</Link></li>
-        <li><Link to="/geolocation">GeoLocation</Link></li>
-        <li><Link to="/notifications">Notifications</Link></li>
+        <li><Link to={baseURL + '/'}>Home</Link></li>
+        <li><Link to={baseURL + '/topics'}>Topics</Link></li>
+        <li><Link to={baseURL + '/geolocation'}>GeoLocation</Link></li>
+        <li><Link to={baseURL + '/notifications'}>Notifications</Link></li>
       </ul>
 
       <hr/>
 
-      <Route exact path="/" component={Home}/>
-      <Route path="/topics" component={Topics}/>
-      <Route path="/geolocation" component={Location}/>
-      <Route path="/notifications" component={WebNotif}/>
+      <Route exact path={baseURL + '/'} component={Home}/>
+      <Route path={baseURL + '/topics'} component={Topics}/>
+      <Route path={baseURL + '/geolocation'} component={Location}/>
+      <Route path={baseURL + '/notifications'} component={WebNotif}/>
     </div>
   </Router>
 )
