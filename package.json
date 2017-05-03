@@ -1,6 +1,7 @@
 {
   "name": "react-samples",
   "version": "0.1.0",
+  "homepage": "https://gabema.github.io/react-samples",
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
