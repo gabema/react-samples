@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Location from './Location';
 import WebNotification from './WebNotification';
+import ImageCapture from './ImageCapture';
 
 // https://reacttraining.com/react-router/web/guides/quick-start
 
@@ -49,6 +50,14 @@ const Topics = ({ match }) => (
   </div>
 );
 
+const onImageChanged = () => {
+  alert('Image Changed!');
+} 
+
+const ImageRoute = () => (
+    <ImageCapture imageChanged={onImageChanged} />
+);
+
 const WebNotif = () => (
   <WebNotification
     title="TESTING!"
@@ -63,6 +72,7 @@ const App = ({baseURL}) => (
         <li><Link to={baseURL + '/topics'}>Topics</Link></li>
         <li><Link to={baseURL + '/geolocation'}>GeoLocation</Link></li>
         <li><Link to={baseURL + '/notifications'}>Notifications</Link></li>
+        <li><Link to={baseURL + '/image'}>Image</Link></li>
       </ul>
 
       <hr/>
@@ -71,6 +81,7 @@ const App = ({baseURL}) => (
       <Route path={baseURL + '/topics'} component={Topics}/>
       <Route path={baseURL + '/geolocation'} component={Location}/>
       <Route path={baseURL + '/notifications'} component={WebNotif}/>
+      <Route path={baseURL + '/image'} component={ImageRoute}/>
     </div>
   </Router>
 )
